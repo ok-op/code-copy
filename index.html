@@ -112,6 +112,42 @@ inst_loader.some_function()  # ফাংশন কল করুন
         </div>
     </div>
 
+    <!-- Third code snippet container -->
+    <div class="code-container">
+        <div class="description">একটি HTML টেম্পলেট তৈরি করা</div>
+        <div class="code-box">
+            <pre id="code3">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My HTML Template</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+</body>
+</html>
+            </pre>
+            <button class="copy-btn" onclick="copyToClipboard('code3')">Copy Code</button>
+        </div>
+    </div>
+
+    <!-- নতুন কোড ব্লক যোগ করতে চাইলে এরকম আরও একটি container কপি করুন -->
+    <!-- Fourth code snippet container -->
+    <div class="code-container">
+        <div class="description">JSON ফাইল লোড এবং প্রিন্ট করা</div>
+        <div class="code-box">
+            <pre id="code4">
+import json
+
+# JSON ফাইল লোড এবং প্রিন্ট করা
+with open('data.json') as json_file:
+    data = json.load(json_file)
+    print(data)
+            </pre>
+            <button class="copy-btn" onclick="copyToClipboard('code4')">Copy Code</button>
+        </div>
+    </div>
+
     <script>
         function copyToClipboard(id) {
             var copyText = document.getElementById(id).textContent;
