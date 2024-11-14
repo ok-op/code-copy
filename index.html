@@ -48,6 +48,11 @@
             overflow-x: auto;
         }
 
+        /* New CSS class for custom background colors */
+        .code-box.blue-background { background-color: #1e3a8a; }
+        .code-box.green-background { background-color: #065f46; }
+        .code-box.purple-background { background-color: #5b21b6; }
+
         .code-box pre {
             margin: 0;
             white-space: pre-wrap; /* Enable line-wrapping */
@@ -112,21 +117,20 @@ inst_loader.some_function()  # ফাংশন কল করুন
         </div>
     </div>
 
-    <!-- Third code snippet container -->
-    <div class="code-container">
-        <div class="description">একটি HTML টেম্পলেট তৈরি করা</div>
-        <div class="code-box">
-            <pre id="code3">
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My HTML Template</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-</body>
-</html>
-            </pre>
+    <!-- কোডব্লকের পরিবর্তন -->
+    <div class="code-box blue-background">
+    <!-- code -->
+    </div>
+<pre id="code3"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My HTML Template&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
             <button class="copy-btn" onclick="copyToClipboard('code3')">Copy Code</button>
         </div>
     </div>
