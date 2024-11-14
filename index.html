@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippets with Copy Functionality</title>
+    <style>
+        /* Basic reset and styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        /* Container styling */
+        .code-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        
+        /* Description styling */
+        .description {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        /* Code box styling */
+        .code-box {
+            background-color: #1e293b;
+            color: #f1f5f9;
+            font-family: monospace;
+            padding: 15px;
+            border-radius: 6px;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-box pre {
+            margin: 0;
+            white-space: pre-wrap; /* Enable line-wrapping */
+        }
+
+        /* Copy button styling */
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Code Snippets with Copy Functionality</h1>
+
+    <!-- First code snippet container -->
+    <div class="code-container">
+        <div class="description">GitHub থেকে একটি Python ফাইল ডাউনলোড এবং চালানো</div>
+        <div class="code-box">
+            <pre id="code1">
+import requests
+
+# GitHub থেকে raw URL
+url = 'https://raw.githubusercontent.com/username/repository-name/branch-name/inst_loader.py'
+
+response = requests.get(url)
+if response.status_code == 200:
+    with open('inst_loader.py', 'wb') as file:
+        file.write(response.content)
+    print("File downloaded successfully!")
+    exec(open('inst_loader.py').read())
+else:
+    print("Failed to download the file")
+            </pre>
+            <button class="copy-btn" onclick="copyToClipboard('code1')">Copy Code</button>
+        </div>
+    </div>
+
+    <!-- Second code snippet container -->
+    <div class="code-container">
+        <div class="description">Python ফাইলকে একটি মডিউল হিসেবে ইমপোর্ট করা এবং ফাংশন কল করা</div>
+        <div class="code-box">
+            <pre id="code2">
+# Module import example
+import inst_loader
+inst_loader.some_function()  # ফাংশন কল করুন
+            </pre>
+            <button class="copy-btn" onclick="copyToClipboard('code2')">Copy Code</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id).textContent;
+            navigator.clipboard.writeText(copyText).then(function() {
+                alert("Code copied to clipboard!");
+            }, function(err) {
+                console.error("Error copying text: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
